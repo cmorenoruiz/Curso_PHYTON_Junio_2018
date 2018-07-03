@@ -10,5 +10,9 @@ def controlErrores():
     except ZeroDivisionError:
         print("Error no puedes dividir por cero")
         controlErrores()
+    except:
+        print("Error general. ¡Sabe dios qué habrá pasado!")
+    finally:
+        print("Lo que quiera ejecutar de todas maneras")
 
 controlErrores()
