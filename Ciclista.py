@@ -11,3 +11,5 @@ mibici.cambiarVelMax(25)
 print (mibici.velMax)
 
 print(mibici)
+mibici.cambiarVelMax(45)
+print(mibici)
