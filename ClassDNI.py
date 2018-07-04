@@ -1,15 +1,25 @@
-class DNI():
+class DNI:
 
-    def __init__(self):
-        letra = ""
-        numero = 0
+    def __init__(self, numero=None):
+       if numero==None:
+           self.letra = ""
+           self.numero = 0
+       else:
+           self.numero=numero
+           self.letra=self.calculaLetra(numero)
 
-    def __init__(self,numero):
-       self.numero=numero
-       self.letra=self.calculaLetra(self.numero)
-
-    def calculaLetra(numero):
-        resto = numero % 23
-        letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET";
-        return letrasDni[resto]
-
+    def calculaLetra(self,numero):
+        devolver="error"
+        try:
+            if type(numero)==type(1):
+                resto = numero % 23
+                letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET"
+                devolver=letrasDni[resto]
+            else:
+                devolver="error"
+        except:
+            devolver="error"
+        finally:
+            return devolver
+    def __str__(self):
+        return "Número: "+str(self.numero) +", Letra: " + self.letra
