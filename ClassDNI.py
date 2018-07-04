@@ -1,3 +1,4 @@
+
 class DNI:
 
     def __init__(self, numero=None):
@@ -11,7 +12,7 @@ class DNI:
     def calculaLetra(self,numero):
         devolver="error"
         try:
-            if type(numero)==type(1):
+            if isinstance(numero,int):
                 resto = numero % 23
                 letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET"
                 devolver=letrasDni[resto]
