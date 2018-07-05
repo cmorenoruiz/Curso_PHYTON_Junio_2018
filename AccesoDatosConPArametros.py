@@ -10,8 +10,8 @@ try:
     # Si en un único parámetro tenemos que poner ',' a continuación del valor de la variable
     resultado=False
     for ape, ofi, sal in cursor:
-        print("Apellido: ", ape)
-        print("Oficio: " ,ofi)
+        print("Apellido: ", ape, end=" ")
+        print("Oficio: " ,ofi, end=" ")
         print("Salario: " , str(sal))
         resultado=True
     if not resultado:
