@@ -8,12 +8,14 @@ try:
     consulta=("SELECT apellido,oficio,salario FROM emp where oficio=%s")
     cursor.execute(consulta,(miOficio,))
     # Si en un único parámetro tenemos que poner ',' a continuación del valor de la variable
-
+    resultado=False
     for ape, ofi, sal in cursor:
-         print("Apellido: ", ape)
-         print("Oficio: " ,ofi)
-         print("Salario: " , str(sal))
-
+        print("Apellido: ", ape)
+        print("Oficio: " ,ofi)
+        print("Salario: " , str(sal))
+        resultado=True
+    if not resultado:
+        print("Sin resultados")
 except bd_conexion.Error as error:
     print("Error: ",error)
 
