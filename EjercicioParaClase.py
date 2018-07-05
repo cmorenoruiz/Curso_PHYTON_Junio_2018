@@ -5,7 +5,7 @@ bd_conexion = bd.connect(host='localhost', port='3306',
 cursor = bd_conexion.cursor()
 try:
     nombre=input("Introduce nombre del Departamento:")
-    consulta= "SELECT apellido FROM emp, dept WHERE emp.DEPT_NO=dept.DEPT_NO and dnombre=%s"
+    consulta= "SELECT apellidos FROM emp, dept WHERE emp.DEPT_NO=dept.DEPT_NO and dnombre=%s"
     cursor.execute(consulta,(nombre,))
 
     # Si en un único parámetro tenemos que poner ',' a continuación del valor de la variable
@@ -15,8 +15,8 @@ try:
         resultado=True
     if not resultado:
         print("Sin resultados para el departamento ",departamento)
-except bd_conexion.Error as error:
-    print("Error: ",error)
+except:
+    print("Error: no he podido trabajar con la BD")
 
 bd_conexion.close()
 
